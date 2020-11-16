@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 import socket
-from requests import get  #install request module
+from requests import get  #install request module (python http library)
 
 hostname =  socket.gethostname
 localIP  = socket.gethostbyname(hostname)
-publicIP = get('http://ifconfig.me')
+publicIP = get('http://ifconfig.me').text
 
 #Here, we're using f-strings is to make string interpolation simpler.It's same way that you would with str.format()
 print(f"Hostname: {hostname}")
